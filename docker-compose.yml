@@ -1,0 +1,65 @@
+version: '3.3'
+
+services:
+  postgres:
+    image: postgres:10.5
+    restart: always
+    environment:
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=postgres
+    ports:
+          - '5432:5432'
+    volumes: 
+          - ./postgres-data:/var/lib/postgresql/data
+# services:
+#   pg9:
+#     image: postgres:10.5
+#     ports:
+#       - 5961:5432
+#     environment:
+#       POSTGRES_DB: project-x
+#       POSTGRES_USER: postgres
+#       POSTGRES_PASSWORD: postgres
+#   pg10:
+#     image: postgres:14.4
+#     ports:
+#       - 5105:5432
+#     environment:
+#       POSTGRES_DB: store
+#       POSTGRES_USER: postgres
+#       POSTGRES_PASSWORD: postgres
+
+# services:
+
+#   postgresql_01:
+#     image: postgres:14.4
+# #     ports:
+# #        - 5961:5432
+#     container_name: postgresql_01
+#     restart: always
+#     volumes:
+#       - ./postgres1/:/var/lib/postgresql/data
+#     environment:
+#       POSTGRES_PASSWORD: postgres024
+
+#   postgresql_02:
+#     image: postgres:14.4
+# #     ports:
+# #        - 5105:5432
+#     container_name: postgresql_02
+#     restart: always
+#     volumes:
+#       - ./postgres2/:/var/lib/postgresql/data
+#     environment:
+#       POSTGRES_PASSWORD: postgres024
+
+#   postgresql_03:
+#     image: postgres:14.4
+# #     ports:
+# #        - 5105:5432
+#     container_name: postgresql_03
+#     restart: always
+#     volumes:
+#       - ./postgres3/:/var/lib/postgresql/data
+#     environment:
+#       POSTGRES_PASSWORD: postgres024
